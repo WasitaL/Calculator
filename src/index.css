@@ -1,3 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    input + .slider {
+        @apply bg-blue-800 rounded-3xl
+    }
+
+    input:checked + .slider {
+    @apply bg-yellow-500 rounded-3xl
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(39px);
+        -ms-transform: translateX(39px);
+        transform: translateX(39px);
+      }
+
+    button {
+        @apply rounded-full h-[65px] cursor-pointer uppercase
+    }
+
+    button:hover {
+        @apply bg-blue-50 
+    }
+    button:active {
+        @apply bg-blue-100
+    }
+    
+    
+    
+}
+@layer components {
+    .switch {
+      @apply relative inline-block w-[80px] h-[40px] bg-slate-700 rounded-3xl
+    }
+    .switch-input {
+        @apply opacity-0 w-0 h-0
+    }
+    .slider {
+        @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-white transition-[0.4s] 
+      }
+    .slider:before {
+        position: absolute;
+        cursor: pointer;
+        content: "";
+        height: 32px;
+        width: 32px;
+        left: 5px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s; 
+        border-radius: 50%;
+        
+    }
+
+    .wrapper {
+      @apply  w-[335px] h-[610px] p-3 bg-yellow-50 dark:bg-blue-950 dark:opacity-90 dark:shadow-slate-900 rounded-3xl shadow
+    }
+
+    .screen {
+        @apply w-full h-[200px] flex flex-row items-end justify-end
+    }
+
+    .column {
+        @apply flex flex-col gap-4 
+    }
+
+    .row {
+        @apply grid grid-cols-4 gap-4 
+    }
+
+    .btn-dark {
+        @apply text-white
+    }
+    
+    .btn-dark:hover {
+        @apply bg-blue-900
+    }
+
+    .solid {
+        @apply bg-amber-200 text-blue-600 font-medium dark:bg-amber-100 dark:opacity-80 dark:text-blue-900
+    }
+
+
+    .solid:hover{
+        @apply bg-amber-300 dark:bg-amber-100
+    }  
+
+    .solid:active {
+        @apply bg-amber-200
+    }  
+
+    .result {
+       @apply text-[52px] text-amber-500  dark:text-slate-300
+    }
+
+
+}
+
